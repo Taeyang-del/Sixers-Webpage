@@ -39,7 +39,8 @@ nav a:hover { color: #7fdbff; }
 .long-joke { white-space: pre-wrap; word-wrap: break-word; font-size: 1.1rem; line-height: 1.8; color: #4e342e; }
 
 .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 20px; }
-.gallery-item { height: 200px; background: #e3f2fd; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #0c3a6b; }
+.gallery-item { height: 220px; background: #e3f2fd; border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.gallery-item img, .gallery-item video { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block; }
 .gallery-item.video { background: linear-gradient(to right, #ffcdd2, #f8bbd0); }
 
 footer { background: #0c3a6b; color: white; text-align: center; padding: 30px 0; margin-top: 50px; }
