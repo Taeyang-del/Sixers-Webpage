@@ -31,8 +31,12 @@ nav a:hover { color: #7fdbff; }
 .news-content { padding: 20px; }
 .news-content h3 { color: #0c3a6b; margin-bottom: 10px; }
 
-.comedy-container { text-align: center; padding: 20px; background: linear-gradient(to right, #ffecb3, #ffcc80); border-radius: 10px; }
-.joke { font-size: 1.4rem; margin-bottom: 20px; color: #5d4037; font-style: italic; transition: opacity 1s; }
+.comedy-container { padding: 24px; background: linear-gradient(to right, #ffecb3, #ffcc80); border-radius: 12px; }
+.joke-card { max-width: 800px; margin: 0 auto; background: #fff8e1; border-radius: 10px; padding: 22px; box-shadow: 0 6px 14px rgba(0,0,0,0.08); }
+.joke-title { color: #6d4c41; margin-bottom: 6px; font-size: 1.6rem; }
+.joke-meta { color: #8d6e63; font-size: 0.95rem; margin-bottom: 14px; }
+.joke-body { text-align: left; }
+.long-joke { white-space: pre-wrap; word-wrap: break-word; font-size: 1.1rem; line-height: 1.8; color: #4e342e; }
 
 .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 20px; }
 .gallery-item { height: 200px; background: #e3f2fd; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #0c3a6b; }
