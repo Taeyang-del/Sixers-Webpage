@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sixers - Fun Factory</title>
+  <!-- External styles and icons (keeps same structure as your Comedy page) -->
+  <link rel="stylesheet" href="style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <style>
+    /* Optional minimal styles so this file works alone too. Remove if your style.css covers these. */
+    :root { --accent: #2563eb; --soft: #f5f7fb; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, sans-serif; margin:0; background:#fff; color:#111; }
+    header { background: linear-gradient(90deg, #0ea5e9 0%, #2563eb 100%); color:#fff; padding:1.25rem 1rem; }
+    .logo-container { display:flex; align-items:center; gap:.75rem; }
+    .dolphin-icon { font-size:1.6rem; }
+    .subtitle { margin:.25rem 0 0; opacity:.95; }
+    nav { background:#0f172a; }
+    nav ul { list-style:none; display:flex; flex-wrap:wrap; gap:.5rem; padding:.5rem 1rem; margin:0; }
+    nav a { color:#e2e8f0; text-decoration:none; padding:.5rem .75rem; border-radius:.5rem; display:inline-flex; align-items:center; gap:.4rem; }
+    nav a:hover, nav a[aria-current="page"] { background:#1e293b; color:#fff; }
+    .container { max-width:1100px; margin:0 auto; padding:1rem; }
+    .section { background:var(--soft); border:1px solid #e5e7eb; border-radius:16px; padding:1rem; margin:1rem 0; }
+    .section-title { margin:0 0 .75rem; font-size:1.35rem; display:flex; align-items:center; gap:.5rem; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:1rem; }
+    .card { background:#fff; border:1px solid #e5e7eb; border-radius:14px; padding:1rem; box-shadow:0 1px 2px rgba(0,0,0,.05); }
+    .card h3 { margin-top:0; font-size:1.1rem; }
+    .meta { color:#64748b; font-size:.9rem; margin:.35rem 0 .5rem; }
+    details { background:#f8fafc; border:1px solid #e2e8f0; border-radius:.75rem; padding:.75rem; }
+    details summary { cursor:pointer; font-weight:600; }
+    .actions { display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.75rem; }
+    .btn { border:1px solid #cbd5e1; background:#fff; border-radius:.6rem; padding:.45rem .7rem; cursor:pointer; }
+    .btn:hover { background:#f1f5f9; }
+    .pill { display:inline-flex; align-items:center; gap:.35rem; border:1px solid #cbd5e1; border-radius:999px; padding:.25rem .6rem; font-size:.85rem; margin:.25rem .25rem 0 0; }
+
+    /* Sudoku */
+    .sudoku { display:grid; grid-template-columns: repeat(9, 34px); gap:2px; background:#0f172a0f; padding:6px; border-radius:10px; width:max-content; }
+    .sudoku input { width:34px; height:34px; text-align:center; font-size:1rem; border:1px solid #cbd5e1; border-radius:6px; }
+    .sudoku input:disabled { background:#e2e8f0; color:#334155; font-weight:700; }
+    .sudoku .thick-right { border-right:3px solid #0f172a; }
+    .sudoku .thick-bottom { border-bottom:3px solid #0f172a; }
+
+    footer { text-align:center; padding:1rem; color:#475569; }
+    footer .wicky-mascot { font-size:1.2rem; margin-bottom:.25rem; }
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <i class="fas fa-water dolphin-icon" aria-hidden="true"></i>
+      <h1>Chadwick International Sixers</h1>
+    </div>
+    <p class="subtitle">Welcome to the <strong>Fun Factory</strong> — challenges, puzzles, and great picks!</p>
+  </header>
+
+  <nav aria-label="Primary">
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="news.html"><i class="fas fa-newspaper"></i> News</a></li>
+      <li><a href="comedy.html"><i class="fas fa-theater-masks"></i> Comedy</a></li>
+      <li><a href="fun-factory.html"><i class="fas fa-gamepad"></i> Fun Factory</a></li>
+      <li><a href="spotlight.html"><i class="fas fa-star"></i> Spotlight</a></li>
+      <li><a href="about.html"><i class="fas fa-users"></i> About</a></li>
+      <li><a href="interviews.html"><i class="fas fa-microphone"></i> Interviews</a></li>
+      <li><a href="Boom-trip-photos.html"><i class="fas fa-camera"></i> Boom trip photos</a></li>
+  </nav>
+
+  <main class="container">
+    <!-- Math Problem of the Week -->
+    <section class="section" id="math">
+      <h2 class="section-title"><i class="fas fa-calculator"></i> Math Problem of the Week</h2>
+      <div class="grid">
+        <article class="card" aria-labelledby="mpow-title">
+          <h3 id="mpow-title"><i class="fas fa-puzzle-piece"></i> Can you crack it?</h3>
+          <p class="meta">Week of <span id="week-range">Sep 22–Sep 28, 2025</span></p>
+          <p id="mpow-text">A rectangle has a perimeter of 54 cm. Its length is 3 cm more than twice its width. What are the rectangle's dimensions?</p>
+          <details>
+            <summary><i class="fas fa-lightbulb"></i> Hint</summary>
+            <p>Let width be <em>w</em>. Then length is <em>2w + 3</em>. Use <em>2(l + w) = 54</em>.</p>
+          </details>
+          <details>
+            <summary><i class="fas fa-check-circle"></i> Show Solution</summary>
+            <p>2[(2w + 3) + w] = 54 ⇒ 2(3w + 3) = 54 ⇒ 6w + 6 = 54 ⇒ 6w = 48 ⇒ w = 8. Then l = 2·8 + 3 = 19. Dimensions: 8 cm × 19 cm.</p>
+          </details>
+          <div class="actions">
+            <button class="btn" id="new-problem"><i class="fas fa-random"></i> New random problem</button>
+          </div>
+          <div class="pill" title="Difficulty"><i class="fas fa-signal"></i> Medium</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Sudoku Corner -->
+    <section class="section" id="sudoku">
+      <h2 class="section-title"><i class="fas fa-th"></i> Sudoku Corner</h2>
+      <div class="grid">
+        <article class="card">
+          <h3><i class="fas fa-seedling"></i> Easy 9×9</h3>
+          <div class="sudoku" id="sudoku-easy" aria-label="Sudoku Easy Grid"></div>
+          <div class="actions">
+            <button class="btn" data-action="check" data-target="sudoku-easy"><i class="fas fa-check"></i> Check</button>
+            <button class="btn" data-action="reset" data-target="sudoku-easy"><i class="fas fa-rotate"></i> Reset</button>
+            <button class="btn" data-action="solve" data-target="sudoku-easy"><i class="fas fa-magic"></i> Solve</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3><i class="fas fa-mountain"></i> Medium 9×9</h3>
+          <div class="sudoku" id="sudoku-medium" aria-label="Sudoku Medium Grid"></div>
+          <div class="actions">
+            <button class="btn" data-action="check" data-target="sudoku-medium"><i class="fas fa-check"></i> Check</button>
+            <button class="btn" data-action="reset" data-target="sudoku-medium"><i class="fas fa-rotate"></i> Reset</button>
+            <button class="btn" data-action="solve" data-target="sudoku-medium"><i class="fas fa-magic"></i> Solve</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Book & Movie Recommendations -->
+    <section class="section" id="recs">
+      <h2 class="section-title"><i class="fas fa-book-open"></i> Book & Movie Recommendations</h2>
+      <div class="grid" id="rec-list">
+        <article class="card">
+          <h3><i class="fas fa-book"></i> Book: The Wild Robot</h3>
+          <p class="meta">By Peter Brown • Recommended by Sixers Library Crew</p>
+          <p>Adventure, heart, and nature—great for class discussions about empathy and technology.</p>
+          <div class="pill"><i class="fas fa-user-friends"></i> Grade 5–7</div>
+        </article>
+        <article class="card">
+          <h3><i class="fas fa-film"></i> Movie: Inside Out</h3>
+          <p class="meta">Rated PG • Family / Comedy</p>
+          <p>Funny and meaningful—perfect for conversations about feelings and growing up.</p>
+          <div class="pill"><i class="fas fa-clock"></i> 95 min</div>
+        </article>
+        <article class="card">
+          <h3><i class="fas fa-book"></i> Book: Front Desk</h3>
+          <p class="meta">By Kelly Yang • Classroom Favorite</p>
+          <p>Funny and inspiring story about resilience and helping others.</p>
+          <div class="pill"><i class="fas fa-user-friends"></i> Grade 4–7</div>
+        </article>
+      </div>
+
+      <article class="card" aria-labelledby="submit-rec-title">
+        <h3 id="submit-rec-title"><i class="fas fa-paper-plane"></i> Submit your recommendation</h3>
+        <form id="rec-form">
+          <label class="sr-only" for="rec-type">Type</label>
+          <select id="rec-type" name="type" required>
+            <option value="">Select type…</option>
+            <option>Book</option>
+            <option>Movie</option>
+          </select>
+          <label class="sr-only" for="rec-title">Title</label>
+          <input id="rec-title" name="title" placeholder="Title" required />
+          <label class="sr-only" for="rec-notes">Why we recommend it</label>
+          <input id="rec-notes" name="notes" placeholder="Why is it great?" required />
+          <button class="btn" type="submit"><i class="fas fa-plus"></i> Add</button>
+        </form>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wicky-mascot" aria-hidden="true"><i class="fas fa-water"></i></div>
+    <p>Chadwick International - Grade 6 Sixers</p>
+    <p>© 2025 Sixers website club</p>
+  </footer>
+
+  <!-- Your existing site script -->
+  <script src="script.js"></script>
+  <!-- Inline helpers so this page works even without script.js -->
+  <script>
+    // --- Math Problem of the Week: swap in a random problem ---
+    (function() {
+      const problems = [
+        {
+          text: "A rectangle has a perimeter of 54 cm. Its length is 3 cm more than twice its width. What are the dimensions?",
+          hint: "Let width be w; length is 2w + 3; use 2(l + w) = 54.",
+          solution: "w = 8, l = 19 ⇒ 8 cm × 19 cm"
+        },
+        {
+          text: "A number is 6 more than its half. What is the number?",
+          hint: "Let n be the number: n = n/2 + 6.",
+          solution: "n = 12"
+        },
+        {
+          text: "The mean of five numbers is 12. Four of them are 9, 10, 12, and 18. What is the missing number?",
+          hint: "Sum = mean × count.",
+          solution: "Total = 60 ⇒ missing = 60 − (9+10+12+18) = 11"
+        },
+        {
+          text: "A triangle has sides 7, 24, and x. If it's a right triangle, find x.",
+          hint: "Use the Pythagorean Theorem.",
+          solution: "7^2 + 24^2 = x^2 ⇒ x = 25"
+        }
+      ];
+      const el = {
+        text: document.getElementById('mpow-text')
+      };
+      const hint = document.querySelector('#math details:nth-of-type(1) p');
+      const sol = document.querySelector('#math details:nth-of-type(2) p');
+      const btn = document.getElementById('new-problem');
+      btn?.addEventListener('click', () => {
+        const p = problems[Math.floor(Math.random()*problems.length)];
+        el.text.textContent = p.text;
+        hint.textContent = p.hint;
+        sol.textContent = p.solution;
+        document.querySelectorAll('#math details[open]')?.forEach(d => d.removeAttribute('open'));
+      });
+    })();
+
+    // --- Sudoku builder/checker ---
+    (function() {
+      const PUZZLES = {
+        "sudoku-easy": {
+          puzzle: "530070000600195000098000060800060003400803001700020006060000280000419005000080079",
+          solution:"534678912672195348198342567859761423426853791713924856961537284287419635345286179"
+        },
+        "sudoku-medium": {
+          puzzle: "000260701680070090190004500820100040004602900050003028009300074040050036703018000",
+          solution:"435269781682571493197834562826195347374682915951743628519326874248957136763418259"
+        }
+      };
+
+      function buildGrid(id) {
+        const wrap = document.getElementById(id);
+        const { puzzle } = PUZZLES[id];
+        wrap.innerHTML = '';
+        for (let i=0; i<81; i++) {
+          const v = puzzle[i];
+          const input = document.createElement('input');
+          input.setAttribute('inputmode', 'numeric');
+          input.setAttribute('maxlength', '1');
+          input.dataset.index = i;
+          if (v !== '0') {
+            input.value = v;
+            input.disabled = true;
+          }
+          // Thick borders between 3x3 boxes
+          const r = Math.floor(i/9), c = i % 9;
+          if (c === 2 || c === 5) input.classList.add('thick-right');
+          if (r === 2 || r === 5) input.classList.add('thick-bottom');
+
+          input.addEventListener('input', (e) => {
+            e.target.value = e.target.value.replace(/[^1-9]/g, '').slice(0,1);
+          });
+          wrap.appendChild(input);
+        }
+      }
+
+      function reset(id){ buildGrid(id); }
+
+      function solve(id){
+        const { solution, puzzle } = PUZZLES[id];
+        const cells = document.querySelectorAll(`#${id} input`);
+        cells.forEach((cell, i) => {
+          cell.value = solution[i];
+          if (puzzle[i] === '0') cell.disabled = false;
+        });
+      }
+
+      function check(id){
+        const { solution } = PUZZLES[id];
+        const cells = document.querySelectorAll(`#${id} input`);
+        let ok = true;
+        cells.forEach((cell, i) => {
+          const v = cell.value;
+          if (v && v !== solution[i]) ok = false;
+        });
+        alert(ok ? 'Looking good so far! ✅' : 'Something is off—check again! ❌');
+      }
+
+      // Build both boards initially
+      Object.keys(PUZZLES).forEach(buildGrid);
+
+      // Wire buttons
+      document.querySelectorAll('.actions .btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.dataset.target;
+          const action = btn.dataset.action;
+          if (action === 'check') check(id);
+          if (action === 'reset') reset(id);
+          if (action === 'solve') solve(id);
+        });
+      });
+    })();
+
+    // --- Recommendations form ---
+    (function(){
+      const form = document.getElementById('rec-form');
+      const list = document.getElementById('rec-list');
+      form?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const type = form.type.value || form['rec-type']?.value || document.getElementById('rec-type').value;
+        const title = form.title.value || document.getElementById('rec-title').value;
+        const notes = form.notes.value || document.getElementById('rec-notes').value;
+        if (!type || !title || !notes) return;
+        const card = document.createElement('article');
+        card.className = 'card';
+        const icon = type === 'Book' ? 'book' : 'film';
+        card.innerHTML = `
+          <h3><i class="fas fa-${icon}"></i> ${type}: ${title}</h3>
+          <p class="meta">Added by Sixers</p>
+          <p>${notes}</p>
+        `;
+        list.prepend(card);
+        form.reset();
+      });
+    })();
+  </script>
+</body>
+</html>
